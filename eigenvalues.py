@@ -40,7 +40,7 @@ def QR_using_orthogonalization (input : np.ndarray) -> tuple[np.ndarray, np.ndar
 
     return (Q, R)
 
-def QR_eigenvalues(input : np.ndarray, algorithm : Callable[[np.ndarray], tuple[np.ndarray, np.ndarray]], repeats : int) -> list[float]:
+def QR_eigenvalues(input : np.ndarray, algorithm : Callable[[np.ndarray], tuple[np.ndarray, np.ndarray]], repeats : int) -> tuple[float]:
     A : np.ndarray = input.copy()
     for i in range(0, repeats):
         QR = algorithm(A)
